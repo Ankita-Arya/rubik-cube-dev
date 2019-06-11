@@ -52,15 +52,7 @@ function flipCube() {
     rotate("cubez", -180);
 }
 
-window.addEventListener('deviceorientation', function(event){
-	this.console.log(event, 'check event');
-	
-	// this.alert('event fired');
-		
-});
-
-window.addEventListener('orientationchange',function(event) {
-	// alert('orietation changed');
+window.addEventListener('devicemotion', function(event){
 	this.console.log(event);
 	if(event.alpha === 0 && event.beta === 90 && event.gamma === -90)
 		turnRight();
