@@ -31,6 +31,35 @@ function decrementColumns() {
 	init();
 }
 
+var cubex = -25,    // initial rotation
+cubey = -40,
+cubez = 0;
+function rotate(variableName, degrees) {
+    window[variableName] = window[variableName] + degrees;
+    rotCube(cubex, cubey, cubez);
+}
+function rotCube(degx, degy, degz){
+    segs = "rotateX("+degx+"deg) rotateY("+degy+"deg) rotateZ("+degz+"deg) translateX(0) translateY(0) translateZ(0)";
+	document.getElementById('cubeDiv').style.transform = segs;
+}
+function turnRight() {
+    rotate("cubey", 90);
+}
+function turnLeft() {
+    rotate("cubey", -90);
+}
+function flipCube() {
+    rotate("cubez", -180);
+}
+
 window.addEventListener('deviceorientation', function(event){
 	this.console.log(event, 'check event');
+	if(event.alpha === 0 && event.beta === 90 && event.gamma === -90)
+		turnRight();
+	else if(event.alpha === 0 && event.beta === 90 && event.gamma === 90)
+		turnLeft();	
+	else if((event.alpha === 0 && event.beta === 90 && event.gamma === 0) ||
+	 (event.alpha === 180 && event.beta === -90 && event.gamma === 0)) 
+		flipCube();
+		
 })
