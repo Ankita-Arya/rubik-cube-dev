@@ -5,9 +5,9 @@
     background-color: #EEE;
 }
 #cubeDiv {
-    width: 300;
-    height: 300;
-    top: 50px;
+    width: 250px;
+    height: 250px;
+    top: 80px;
     transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
@@ -25,46 +25,46 @@
     position: absolute;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    width: 300;
-    height: 300;
+    width: 250px;
+    height: 250px;
     float: left;
     overflow: hidden;
     opacity: 0.85;
 }
 #side1 {
-    transform: rotatex(90deg) translateX(0px) translateY(0px) translateZ(150px);
-    -moz-transform: rotatex(90deg) translateX(0px) translateY(0px) translateZ(150px);
-    -webkit-transform: rotatex(90deg) translateX(0px) translateY(0px) translateZ(150px);
+    transform: rotatex(90deg) translateX(0px) translateY(0px) translateZ(125px);
+    -moz-transform: rotatex(90deg) translateX(0px) translateY(0px) translateZ(125px);
+    -webkit-transform: rotatex(90deg) translateX(0px) translateY(0px) translateZ(125px);
     background-color: #FFF;
 }
 #side2 {
-    transform: rotateY(-90deg) translateX(0px) translateY(0px) translateZ(150px);
-    -moz-transform: rotateY(-90deg) translateX(0px) translateY(0px) translateZ(150px);
-    -webkit-transform: rotateY(-90deg) translateX(0px) translateY(0px) translateZ(150px);
+    transform: rotateY(-90deg) translateX(0px) translateY(0px) translateZ(125px);
+    -moz-transform: rotateY(-90deg) translateX(0px) translateY(0px) translateZ(125px);
+    -webkit-transform: rotateY(-90deg) translateX(0px) translateY(0px) translateZ(125px);
     background-color: #ffaf1c;
 }
 #side3 {
-    transform: translateX(0px) translateY(0px) translateZ(150px);
-    -moz-transform: translateX(0px) translateY(0px) translateZ(150px);
-    -webkit-transform: translateX(0px) translateY(0px) translateZ(150px);
+    transform: translateX(0px) translateY(0px) translateZ(125px);
+    -moz-transform: translateX(0px) translateY(0px) translateZ(125px);
+    -webkit-transform: translateX(0px) translateY(0px) translateZ(125px);
     background-color: #58d568;
 }
 #side4 {
-    transform: rotateY(90deg) translateX(0px) translateY(0px) translateZ(150px);
-    -moz-transform: rotateY(90deg) translateX(0px) translateY(0px) translateZ(150px);
-    -webkit-transform: rotateY(90deg) translateX(0px) translateY(0px) translateZ(150px);
+    transform: rotateY(90deg) translateX(0px) translateY(0px) translateZ(125px);
+    -moz-transform: rotateY(90deg) translateX(0px) translateY(0px) translateZ(125px);
+    -webkit-transform: rotateY(90deg) translateX(0px) translateY(0px) translateZ(125px);
     background-color: #ed3030;
 }
 #side5 {
-    transform: rotateY(180deg) translateX(0px) translateY(0px) translateZ(150px);
-    -moz-transform: rotateY(180deg) translateX(0px) translateY(0px) translateZ(150px);
-    -webkit-transform: rotateY(180deg) translateX(0px) translateY(0px) translateZ(150px);
+    transform: rotateY(180deg) translateX(0px) translateY(0px) translateZ(125px);
+    -moz-transform: rotateY(180deg) translateX(0px) translateY(0px) translateZ(125px);
+    -webkit-transform: rotateY(180deg) translateX(0px) translateY(0px) translateZ(125px);
     background-color: #1c5ffe;
 }
 #side6 {
-    transform: rotateX(-90deg) translateX(0px) translateY(0px) translateZ(150px);
-    -moz-transform: rotateX(-90deg) translateX(0px) translateY(0px) translateZ(150px);
-    -webkit-transform: rotateX(-90deg) translateX(0px) translateY(0px) translateZ(150px);
+    transform: rotateX(-90deg) translateX(0px) translateY(0px) translateZ(125px);
+    -moz-transform: rotateX(-90deg) translateX(0px) translateY(0px) translateZ(125px);
+    -webkit-transform: rotateX(-90deg) translateX(0px) translateY(0px) translateZ(125px);
     background-color: #f2f215;
 }
 
