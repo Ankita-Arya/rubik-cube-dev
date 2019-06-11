@@ -63,4 +63,8 @@ window.addEventListener('deviceorientation', function(event){
 		flipCube();
 	this.alert('event fired');
 		
+});
+
+window.addEventListener('orientationchange',function(event) {
+	this.console.log('orietation changed');
 })
