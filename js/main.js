@@ -61,10 +61,10 @@ window.addEventListener('deviceorientation', function(event){
 	else if((event.alpha === 0 && event.beta === 90 && event.gamma === 0) ||
 	 (event.alpha === 180 && event.beta === -90 && event.gamma === 0)) 
 		flipCube();
-	this.alert('event fired');
+	// this.alert('event fired');
 		
 });
 
 window.addEventListener('orientationchange',function(event) {
-	this.console.log('orietation changed');
+	alert('orietation changed');
 })
