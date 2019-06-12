@@ -54,7 +54,7 @@ function flipCube() {
 var count = 1;
 window.addEventListener('orientationchange', function(event){
 	this.console.log(event);
-	this.document.getElementById('check').innerHTML = JSON.stringify(event);
+	this.document.getElementById('check').innerHTML = window.orientation;
 	turnRight();
 	if(event.alpha === 0 && event.beta === 90 && event.gamma === -90)
 		turnRight();
