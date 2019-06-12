@@ -59,7 +59,7 @@ var turnCube = function() {
 
 window.addEventListener('deviceorientation', function(event){
 	this.console.log(event);
-	this.document.getElementById('check').innerHTML = JSON.stringify(event);
+	this.document.getElementById('check').innerHTML = event;
 	// if((windowOrientation === 0 && this.window.orientation === 90) || 
 	// (windowOrientation === -90 && this.window.orientation === 0) || 
 	// (windowOrientation === 90 && this.window.orientation === -90)) {
