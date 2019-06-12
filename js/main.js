@@ -53,9 +53,9 @@ function flipCube() {
 }
 var windowOrientation = window.orientation;
 window.addEventListener('devicemotion', function() {
-	this.document.getElementById('check').innerHTML = window.orientation + 'checked';
+	this.document.getElementById('check').innerHTML = window.orientation + ' checked';
 })
-window.addEventListener('deviceorientation', function(event){
+window.addEventListener('orientationchange', function(event){
 	this.console.log(event);
 	turnRight();
 	if(event.alpha === 0 && event.beta === 90 && event.gamma === -90)
