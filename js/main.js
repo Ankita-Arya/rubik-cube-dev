@@ -51,9 +51,10 @@ function turnLeft() {
 function flipCube() {
     rotate("cubez", -180);
 }
-count = 1;
+var count = 1;
 window.addEventListener('orientationchange', function(event){
 	this.console.log(event);
+	this.document.getElementById.innerHTML = count++;
 	if(event.alpha === 0 && event.beta === 90 && event.gamma === -90)
 		turnRight();
 	else if(event.alpha === 0 && event.beta === 90 && event.gamma === 90)
@@ -61,6 +62,6 @@ window.addEventListener('orientationchange', function(event){
 	else if((event.alpha === 0 && event.beta === 90 && event.gamma === 0) ||
 	 (event.alpha === 180 && event.beta === -90 && event.gamma === 0)) 
 		flipCube();
-	this.document.getElementById.innerHTML = count++;	
+		
 });
 
