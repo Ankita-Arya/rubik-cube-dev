@@ -51,10 +51,12 @@ function turnLeft() {
 function flipCube() {
     rotate("cubez", -180);
 }
-var count = 1;
+var windowOrientation = window.orientation;
+window.addEventListener('devicemotion', function() {
+	this.document.getElementById('check').innerHTML = window.orientation + 'checked';
+})
 window.addEventListener('orientationchange', function(event){
 	this.console.log(event);
-	this.document.getElementById('check').innerHTML = window.orientation;
 	turnRight();
 	if(event.alpha === 0 && event.beta === 90 && event.gamma === -90)
 		turnRight();
