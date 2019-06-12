@@ -53,6 +53,7 @@ function flipCube() {
 }
 var count = 1;
 window.addEventListener('orientationchange', function(event){
+	this.alert('orientation changed');
 	this.console.log(event);
 	this.document.getElementById.innerHTML = count++;
 	if(event.alpha === 0 && event.beta === 90 && event.gamma === -90)
