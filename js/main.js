@@ -52,26 +52,29 @@ function flipCube() {
     rotate("cubez", -180);
 }
 var windowOrientation = window.orientation;
-window.addEventListener('devicemotion', function(event) {
-	this.console.log(event);
+
+var turnCube = function() {
 	
-})
-window.addEventListener('orientationchange', function(event){
+}
+
+window.addEventListener('deviceorientation', function(event){
 	this.console.log(event);
-	if((windowOrientation === 0 && this.window.orientation === 90) || 
-	(windowOrientation === -90 && this.window.orientation === 0) || 
-	(windowOrientation === 90 && this.window.orientation === -90)) {
-		turnLeft();
-		windowOrientation = window.orientation;
-		this.document.getElementById('check').innerHTML = 'Turned Left';
-	}
-	else if((windowOrientation === 0 && this.window.orientation === -90) || 
-	(windowOrientation === 90 && this.window.orientation === 0) || 
-	(windowOrientation === -90 && this.window.orientation === 90)){
-		turnRight();
-		windowOrientation = window.orientation;
-		this.document.getElementById('check').innerHTML = 'Turned Right';
-	}
+	this.document.getElementById('check').innerHTML = JSON.stringify(event);
+	// if((windowOrientation === 0 && this.window.orientation === 90) || 
+	// (windowOrientation === -90 && this.window.orientation === 0) || 
+	// (windowOrientation === 90 && this.window.orientation === -90)) {
+	// 	turnLeft();
+	// 	windowOrientation = window.orientation;
+	// 	this.document.getElementById('check').innerHTML = 'Turned Left';
+	// }
+	// else if((windowOrientation === 0 && this.window.orientation === -90) || 
+	// (windowOrientation === 90 && this.window.orientation === 0) || 
+	// (windowOrientation === -90 && this.window.orientation === 90)){
+	// 	turnRight();
+	// 	windowOrientation = window.orientation;
+	// 	this.document.getElementById('check').innerHTML = 'Turned Right';
+	// }
+	// else if(this.window.orientation === 180)
 		
 });
 
