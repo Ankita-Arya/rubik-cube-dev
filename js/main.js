@@ -52,19 +52,26 @@ function flipCube() {
     rotate("cubez", -180);
 }
 var windowOrientation = window.orientation;
-window.addEventListener('devicemotion', function() {
-	this.document.getElementById('check').innerHTML = window.orientation + ' checked';
+window.addEventListener('devicemotion', function(event) {
+	this.console.log(event);
+	
 })
 window.addEventListener('orientationchange', function(event){
 	this.console.log(event);
-	turnRight();
-	if(event.alpha === 0 && event.beta === 90 && event.gamma === -90)
+	if((windowOrientation === 0 && this.window.orientation === 90) || 
+	(windowOrientation === -90 && this.window.orientation === 0) || 
+	(windowOrientation === 90 && this.window.orientation === -90)) {
+		turnLeft();
+		windowOrientation = window.orientation;
+		this.document.getElementById('check').innerHTML = 'Turned Left';
+	}
+	else if((windowOrientation === 0 && this.window.orientation === -90) || 
+	(windowOrientation === 90 && this.window.orientation === 0) || 
+	(windowOrientation === -90 && this.window.orientation === 90)){
 		turnRight();
-	else if(event.alpha === 0 && event.beta === 90 && event.gamma === 90)
-		turnLeft();	
-	else if((event.alpha === 0 && event.beta === 90 && event.gamma === 0) ||
-	 (event.alpha === 180 && event.beta === -90 && event.gamma === 0)) 
-		flipCube();
+		windowOrientation = window.orientation;
+		this.document.getElementById('check').innerHTML = 'Turned Right';
+	}
 		
 });
 
