@@ -76,6 +76,7 @@ function throttle(fn, threshhold, scope) {
 }
 
 if (window.DeviceOrientationEvent) {
+	alert('event present');
 	window.addEventListener('deviceorientation', throttle(function (event) {
 		//for portrait and upside down, flip cube
 		if ((event.alpha === 0 && event.beta === 90 && event.gamma === 0) || event.alpha === 180 && event.beta === -90 && event.gamma === 0)
