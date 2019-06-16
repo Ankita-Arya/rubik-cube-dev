@@ -3,6 +3,11 @@
     --cube-width-height-half: 125px;
 }
 
+button {
+    margin: 5px;
+    padding: 5px;
+}
+
 #mainDiv {
     width: 450px;
     height: 450px;
