@@ -78,7 +78,8 @@ function throttle(fn, threshhold, scope) {
 if (window.DeviceOrientationEvent) {
 	alert(window.DeviceOrientationEvent);
 	window.addEventListener('deviceorientation', throttle(function (event) {
-		document.getElementById('check').innerHTML = event.alpha + ' ' + event.beta + ' ' + event.gamma;
+		turnLeft();
+		document.getElementById('check').innerHTML = event.gamma;
 		//for portrait and upside down, flip cube
 		if ((event.alpha === 0 && event.beta === 90 && event.gamma === 0) || event.alpha === 180 && event.beta === -90 && event.gamma === 0)
 			flipCube();
@@ -88,6 +89,6 @@ if (window.DeviceOrientationEvent) {
 		//for landscape right turn left
 		if (event.alpha === 0 && event.beta === 90 && event.gamma === 90)
 			turnLeft();
-	}, 500));
+	}, 1000));
 }
 
