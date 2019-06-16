@@ -1,6 +1,6 @@
 :root {
-    --cube-width-height: 250px;
-    --cube-width-height-half: 125px;
+    --cube-width-height: 300px;
+    --cube-width-height-half: 150px;
 }
 
 button {
@@ -9,8 +9,8 @@ button {
 }
 
 #mainDiv {
-    width: 450px;
-    height: 450px;
+    width: 550px;
+    height: 550px;
     margin: 20px auto;
     background-color: #EEE;
 }
