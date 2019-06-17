@@ -31,15 +31,15 @@ function decrementColumns() {
 	init();
 }
 
-var cubex = -25,    // initial rotation
-	cubey = -40,
+var cubex = 0,    // initial rotation
+	cubey = 0,
 	cubez = 0;
 function rotate(variableName, degrees) {
 	window[variableName] = window[variableName] + degrees;
 	rotCube(cubex, cubey, cubez);
 }
 function rotCube(degx, degy, degz) {
-	segs = "rotateX(" + degx + "deg) rotateY(" + degy + "deg) rotateZ(" + degz + "deg) translateX(0) translateY(0) translateZ(0)";
+	segs = "rotateX(" + degx + "deg) rotateY(" + degy + "deg) rotateZ(" + degz + "deg)";
 	document.getElementById('cubeDiv').style.transform = segs;
 }
 function turnRight() {
@@ -76,36 +76,21 @@ function throttle(fn, threshhold, scope) {
 }
 
 if (window.DeviceOrientationEvent) {
-	// alert(window.DeviceOrientationEvent);
-	// window.addEventListener('deviceorientation', throttle(function (event) {
-	// 	turnLeft();
-	// 	document.getElementById('check').innerHTML = event.gamma;
-	// 	//for portrait and upside down, flip cube
-	// 	if ((event.alpha === 0 && event.beta === 90 && event.gamma === 0) || event.alpha === 180 && event.beta === -90 && event.gamma === 0)
-	// 		flipCube();
-	// 	//for landscape left turn right	
-	// 	if (event.alpha === 0 && event.beta === 90 && event.gamma === -90)
-	// 		turnRight();
-	// 	//for landscape right turn left
-	// 	if (event.alpha === 0 && event.beta === 90 && event.gamma === 90)
-	// 		turnLeft();
-	// }, 1000));
 	window.addEventListener('deviceorientation', function (event) {
-		cubex = event.beta + 180;
-		cubey = event.gamma + 180;
-		cubez = event.alpha + 180;
-			rotCube(cubex, cubey, cubez)
-			// turnLeft();
-			// document.getElementById('check').innerHTML = event.gamma;
-			// //for portrait and upside down, flip cube
-			// if ((event.alpha === 0 && event.beta === 90 && event.gamma === 0) || event.alpha === 180 && event.beta === -90 && event.gamma === 0)
-			// 	flipCube();
-			// //for landscape left turn right	
-			// if (event.alpha === 0 && event.beta === 90 && event.gamma === -90)
-			// 	turnRight();
-			// //for landscape right turn left
-			// if (event.alpha === 0 && event.beta === 90 && event.gamma === 90)
-			// 	turnLeft();
-		});
+	cubex = event.beta + 180;
+	cubey = event.gamma + 180;
+	cubez = event.alpha + 180;
+		rotCube(cubex, cubey, cubez)
+		// turnLeft();
+		// document.getElementById('check').innerHTML = event.gamma;
+		// //for portrait and upside down, flip cube
+		// if ((event.alpha === 0 && event.beta === 90 && event.gamma === 0) || event.alpha === 180 && event.beta === -90 && event.gamma === 0)
+		// 	flipCube();
+		// //for landscape left turn right	
+		// if (event.alpha === 0 && event.beta === 90 && event.gamma === -90)
+		// 	turnRight();
+		// //for landscape right turn left
+		// if (event.alpha === 0 && event.beta === 90 && event.gamma === 90)
+		// 	turnLeft();
+	});
 }
-
