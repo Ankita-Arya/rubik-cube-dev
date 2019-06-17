@@ -76,21 +76,9 @@ function throttle(fn, threshhold, scope) {
 }
 
 if (window.DeviceOrientationEvent) {
-	window.addEventListener('deviceorientation', function (event) {
-	cubex = event.beta + 180;
-	cubey = event.gamma + 180;
-	cubez = event.alpha + 180;
-		rotCube(cubex, cubey, cubez)
-		// turnLeft();
-		// document.getElementById('check').innerHTML = event.gamma;
-		// //for portrait and upside down, flip cube
-		// if ((event.alpha === 0 && event.beta === 90 && event.gamma === 0) || event.alpha === 180 && event.beta === -90 && event.gamma === 0)
-		// 	flipCube();
-		// //for landscape left turn right	
-		// if (event.alpha === 0 && event.beta === 90 && event.gamma === -90)
-		// 	turnRight();
-		// //for landscape right turn left
-		// if (event.alpha === 0 && event.beta === 90 && event.gamma === 90)
-		// 	turnLeft();
-	});
+	window.addEventListener('deviceorientation', throttle(function (event) {
+		cubex = event.beta + 180;
+		cubey = event.gamma + 180;
+		cubez = event.alpha + 180;
+	}), 500);
 }
